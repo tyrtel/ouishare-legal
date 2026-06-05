@@ -3,20 +3,285 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ouiShare — Legal</title>
+  <title>ouiShare — Split expenses with friends</title>
   <style>
-    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; max-width: 680px; margin: 60px auto; padding: 0 24px; color: #1a1a2e; line-height: 1.7; }
-    h1 { color: #1D9E75; }
-    a { color: #1D9E75; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:      #0B1733;
+      --navy-card: #0F2044;
+      --navy-light:#162558;
+      --blue:      #2176FF;
+      --blue-glow: rgba(33, 118, 255, 0.25);
+      --gold:      #F5A623;
+      --gold-glow: rgba(245, 166, 35, 0.20);
+      --white:     #FFFFFF;
+      --white-70:  rgba(255,255,255,0.70);
+      --white-30:  rgba(255,255,255,0.12);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--navy);
+      color: var(--white);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      line-height: 1.6;
+    }
+
+    /* ── Nav ─────────────────────────────────────────────── */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 40px;
+      border-bottom: 1px solid var(--white-30);
+      position: sticky;
+      top: 0;
+      background: rgba(11, 23, 51, 0.92);
+      backdrop-filter: blur(12px);
+      z-index: 100;
+    }
+    .nav-brand {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--white);
+      text-decoration: none;
+      letter-spacing: -0.3px;
+    }
+    .nav-brand span { color: var(--gold); }
+    .nav-links { display: flex; gap: 28px; }
+    .nav-links a {
+      color: var(--white-70);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--white); }
+
+    /* ── Hero ────────────────────────────────────────────── */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 90px 24px 80px;
+      gap: 28px;
+    }
+    .hero-icon {
+      width: 128px;
+      height: 128px;
+      border-radius: 28px;
+      box-shadow:
+        0 0 0 1px rgba(33,118,255,0.3),
+        0 0 48px var(--blue-glow),
+        0 24px 48px rgba(0,0,0,0.5);
+    }
+    .hero h1 {
+      font-size: clamp(2.4rem, 6vw, 3.6rem);
+      font-weight: 800;
+      letter-spacing: -1px;
+      line-height: 1.15;
+    }
+    .hero h1 em {
+      font-style: normal;
+      color: var(--gold);
+    }
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--white-70);
+      max-width: 520px;
+    }
+    .badge-row { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
+
+    .badge-coming-soon {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--white-30);
+      border: 1px solid rgba(33,118,255,0.4);
+      border-radius: 12px;
+      padding: 12px 22px;
+      font-size: 0.9rem;
+      color: var(--white-70);
+      cursor: default;
+    }
+    .badge-coming-soon svg { opacity: 0.7; }
+
+    /* ── Features ────────────────────────────────────────── */
+    .features {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 20px 24px 80px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: var(--navy-card);
+      border: 1px solid var(--white-30);
+      border-radius: 18px;
+      padding: 28px 24px;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .card:hover {
+      border-color: rgba(33,118,255,0.5);
+      box-shadow: 0 0 24px var(--blue-glow);
+    }
+    .card-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      background: var(--navy-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      margin-bottom: 16px;
+    }
+    .card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--white);
+    }
+    .card p {
+      font-size: 0.88rem;
+      color: var(--white-70);
+      line-height: 1.6;
+    }
+
+    /* ── EU strip ────────────────────────────────────────── */
+    .eu-strip {
+      max-width: 960px;
+      margin: 0 auto 80px;
+      padding: 0 24px;
+    }
+    .eu-strip-inner {
+      background: linear-gradient(135deg, #0F2044 0%, #162558 100%);
+      border: 1px solid rgba(245,166,35,0.3);
+      border-radius: 18px;
+      padding: 32px 36px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    .eu-badge {
+      font-size: 2.4rem;
+      flex-shrink: 0;
+    }
+    .eu-strip-inner h3 { font-size: 1rem; font-weight: 700; color: var(--gold); margin-bottom: 6px; }
+    .eu-strip-inner p  { font-size: 0.88rem; color: var(--white-70); }
+
+    /* ── Footer ──────────────────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--white-30);
+      padding: 36px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    footer p { font-size: 0.82rem; color: var(--white-70); }
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a {
+      font-size: 0.82rem;
+      color: var(--white-70);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--white); }
+
+    /* ── Mobile ──────────────────────────────────────────── */
+    @media (max-width: 600px) {
+      nav { padding: 16px 20px; }
+      .nav-links { gap: 16px; }
+      .hero { padding: 60px 20px 60px; }
+      footer { padding: 28px 20px; flex-direction: column; align-items: flex-start; }
+      .eu-strip-inner { flex-direction: column; text-align: center; }
+    }
   </style>
 </head>
 <body>
-  <h1>ouiShare</h1>
-  <p>Split travel expenses with friends.</p>
-  <ul>
-    <li><a href="privacy-policy-en.html">Privacy Policy (English)</a></li>
-    <li><a href="privacy-policy-fr.html">Politique de Confidentialité (Français)</a></li>
-  </ul>
-  <p>Support: <a href="mailto:tyrtel@gmail.com">tyrtel@gmail.com</a></p>
+
+  <!-- Nav -->
+  <nav>
+    <a href="#" class="nav-brand">oui<span>Share</span></a>
+    <div class="nav-links">
+      <a href="mailto:tyrtel@gmail.com">Support</a>
+      <a href="privacy-policy-en.html">Privacy</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <img src="euroicon.png" alt="ouiShare app icon" class="hero-icon" />
+    <h1>Split expenses.<br><em>Zero friction.</em></h1>
+    <p>ouiShare helps your group track shared costs — travel, restaurants, activities — and settle up with one tap. No spreadsheets, no awkward IOUs.</p>
+    <div class="badge-row">
+      <div class="badge-coming-soon">
+        <!-- Google Play icon -->
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76c.38.21.82.22 1.21.02l11.62-6.7-2.59-2.59L3.18 23.76zm-1.4-20.3A1.77 1.77 0 0 0 1.5 4.9v14.2c0 .52.23 1 .62 1.34l.07.06 7.96-7.96v-.19L1.78 3.46zm16.5 8.39-2.72-1.57-2.9 2.9 2.9 2.9 2.74-1.58c.78-.45.78-1.2-.02-1.65zm-15.1 9.39 9.3-9.3-2.59-2.59L3.18 19.24v2.02c0 .02 0 .02.01.03z"/></svg>
+        Coming soon — Google Play
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature cards -->
+  <div class="features">
+    <div class="card">
+      <div class="card-icon">📸</div>
+      <h3>Scan receipts instantly</h3>
+      <p>Point your camera at any receipt and ouiShare reads the total and description automatically — no manual entry.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">👥</div>
+      <h3>Invite anyone</h3>
+      <p>Share a link. Friends join the trip without creating an account first. Sign up later and their history follows them.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">💳</div>
+      <h3>Settle with card or bank</h3>
+      <p>Pay what you owe directly in the app — by card via Stripe or by bank transfer via Tink Open Banking.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">✈️</div>
+      <h3>Built for trips</h3>
+      <p>Track who paid for what across every meal, hotel, and activity. See running totals per person at a glance.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🔒</div>
+      <h3>Private by design</h3>
+      <p>Your data lives on EU servers (Frankfurt). We never sell data or show ads. Contact data never leaves your device.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">⚡</div>
+      <h3>No sign-up required</h3>
+      <p>Start a trip and add expenses immediately as a guest. Connect your Google account whenever you're ready.</p>
+    </div>
+  </div>
+
+  <!-- EU compliance strip -->
+  <div class="eu-strip">
+    <div class="eu-strip-inner">
+      <div class="eu-badge">🇪🇺</div>
+      <div>
+        <h3>Made in France. Built for Europe.</h3>
+        <p>All data is stored in the EU (Frankfurt, Germany) under GDPR. You have the right to access, export, and delete your data at any time. Payments handled by Stripe and Tink — both PCI-DSS and PSD2 compliant.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2026 McCleery Enterprises · ouiShare</p>
+    <div class="footer-links">
+      <a href="mailto:tyrtel@gmail.com">Support</a>
+      <a href="privacy-policy-en.html">Privacy Policy (EN)</a>
+      <a href="privacy-policy-fr.html">Politique de Confidentialité (FR)</a>
+    </div>
+  </footer>
+
 </body>
 </html>
