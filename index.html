@@ -74,7 +74,7 @@
       transition: background 0.2s, color 0.2s;
     }
     .lang-switch:hover { background: rgba(255,255,255,0.18); color: var(--white); }
-    .lang-switch .flag { font-size: 1.1rem; line-height: 1; }
+    .lang-switch svg { border-radius: 2px; flex-shrink: 0; }
 
     /* ── Hero ────────────────────────────────────────────── */
     .hero {
@@ -228,7 +228,18 @@
     <div class="nav-links">
       <a href="mailto:tyrtel@gmail.com">Assistance</a>
       <a href="privacy-policy-fr.html">Confidentialité</a>
-      <a href="index-en.html" class="lang-switch"><span class="flag">🇬🇧</span> English</a>
+      <a href="index-en.html" class="lang-switch">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="14" viewBox="0 0 60 40">
+          <rect width="60" height="40" fill="#012169"/>
+          <path d="M0,0 L60,40 M60,0 L0,40" stroke="#fff" stroke-width="8"/>
+          <path d="M0,0 L60,40 M60,0 L0,40" stroke="#C8102E" stroke-width="4"/>
+          <rect y="15" width="60" height="10" fill="#fff"/>
+          <rect x="25" width="10" height="40" fill="#fff"/>
+          <rect y="17" width="60" height="6" fill="#C8102E"/>
+          <rect x="27" width="6" height="40" fill="#C8102E"/>
+        </svg>
+        English
+      </a>
     </div>
   </nav>
 

@@ -208,7 +208,7 @@
       transition: background 0.2s, color 0.2s;
     }
     .lang-switch:hover { background: rgba(255,255,255,0.18); color: var(--white); }
-    .lang-switch .flag { font-size: 1.1rem; line-height: 1; }
+    .lang-switch svg { border-radius: 2px; flex-shrink: 0; }
 
     /* ── Mobile ──────────────────────────────────────────── */
     @media (max-width: 600px) {
@@ -228,7 +228,14 @@
     <div class="nav-links">
       <a href="mailto:tyrtel@gmail.com">Support</a>
       <a href="privacy-policy-en.html">Privacy</a>
-      <a href="index.html" class="lang-switch"><span class="flag">🇫🇷</span> Français</a>
+      <a href="index.html" class="lang-switch">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="14" viewBox="0 0 20 14">
+          <rect width="7" height="14" fill="#002395"/>
+          <rect x="7" width="6" height="14" fill="#fff"/>
+          <rect x="13" width="7" height="14" fill="#ED2939"/>
+        </svg>
+        Français
+      </a>
     </div>
   </nav>
 
