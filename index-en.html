@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ouiShare — Partagez les dépenses avec vos amis</title>
+  <title>ouiShare — Split expenses with friends</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -50,7 +50,7 @@
       letter-spacing: -0.3px;
     }
     .nav-brand span { color: var(--gold); }
-    .nav-links { display: flex; gap: 28px; align-items: center; }
+    .nav-links { display: flex; gap: 28px; }
     .nav-links a {
       color: var(--white-70);
       text-decoration: none;
@@ -58,23 +58,6 @@
       transition: color 0.2s;
     }
     .nav-links a:hover { color: var(--white); }
-
-    /* ── Language switcher ───────────────────────────────── */
-    .lang-switch {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: var(--white-30);
-      border: 1px solid rgba(255,255,255,0.18);
-      border-radius: 999px;
-      padding: 5px 12px 5px 8px;
-      font-size: 0.82rem;
-      color: var(--white-70);
-      text-decoration: none;
-      transition: background 0.2s, color 0.2s;
-    }
-    .lang-switch:hover { background: rgba(255,255,255,0.18); color: var(--white); }
-    .lang-switch .flag { font-size: 1.1rem; line-height: 1; }
 
     /* ── Hero ────────────────────────────────────────────── */
     .hero {
@@ -210,6 +193,23 @@
     }
     .footer-links a:hover { color: var(--white); }
 
+    /* ── Language switcher ───────────────────────────────── */
+    .lang-switch {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--white-30);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 999px;
+      padding: 5px 12px 5px 8px;
+      font-size: 0.82rem;
+      color: var(--white-70);
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+    }
+    .lang-switch:hover { background: rgba(255,255,255,0.18); color: var(--white); }
+    .lang-switch .flag { font-size: 1.1rem; line-height: 1; }
+
     /* ── Mobile ──────────────────────────────────────────── */
     @media (max-width: 600px) {
       nav { padding: 16px 20px; }
@@ -226,22 +226,22 @@
   <nav>
     <a href="#" class="nav-brand">oui<span>Share</span></a>
     <div class="nav-links">
-      <a href="mailto:tyrtel@gmail.com">Assistance</a>
-      <a href="privacy-policy-fr.html">Confidentialité</a>
-      <a href="index-en.html" class="lang-switch"><span class="flag">🇬🇧</span> English</a>
+      <a href="mailto:tyrtel@gmail.com">Support</a>
+      <a href="privacy-policy-en.html">Privacy</a>
+      <a href="index.html" class="lang-switch"><span class="flag">🇫🇷</span> Français</a>
     </div>
   </nav>
 
   <!-- Hero -->
   <section class="hero">
-    <img src="euroicon.png" alt="ouiShare icône de l'application" class="hero-icon" />
-    <h1>Partagez les dépenses.<br><em>Sans effort.</em></h1>
-    <p>ouiShare aide votre groupe à suivre les dépenses communes — voyages, restaurants, activités — et à régler les comptes en un seul tap. Fini les tableurs et les dettes gênantes.</p>
+    <img src="euroicon.png" alt="ouiShare app icon" class="hero-icon" />
+    <h1>Split expenses.<br><em>Zero friction.</em></h1>
+    <p>ouiShare helps your group track shared costs — travel, restaurants, activities — and settle up with one tap. No spreadsheets, no awkward IOUs.</p>
     <div class="badge-row">
       <div class="badge-coming-soon">
         <!-- Google Play icon -->
         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76c.38.21.82.22 1.21.02l11.62-6.7-2.59-2.59L3.18 23.76zm-1.4-20.3A1.77 1.77 0 0 0 1.5 4.9v14.2c0 .52.23 1 .62 1.34l.07.06 7.96-7.96v-.19L1.78 3.46zm16.5 8.39-2.72-1.57-2.9 2.9 2.9 2.9 2.74-1.58c.78-.45.78-1.2-.02-1.65zm-15.1 9.39 9.3-9.3-2.59-2.59L3.18 19.24v2.02c0 .02 0 .02.01.03z"/></svg>
-        Bientôt disponible — Google Play
+        Coming soon — Google Play
       </div>
     </div>
   </section>
@@ -250,33 +250,33 @@
   <div class="features">
     <div class="card">
       <div class="card-icon">📸</div>
-      <h3>Scannez vos reçus instantanément</h3>
-      <p>Pointez votre caméra sur n'importe quel reçu et ouiShare lit le total et la description automatiquement — sans saisie manuelle.</p>
+      <h3>Scan receipts instantly</h3>
+      <p>Point your camera at any receipt and ouiShare reads the total and description automatically — no manual entry.</p>
     </div>
     <div class="card">
       <div class="card-icon">👥</div>
-      <h3>Invitez n'importe qui</h3>
-      <p>Partagez un lien. Vos amis rejoignent le voyage sans créer de compte au préalable. Ils s'inscrivent plus tard et leur historique les suit.</p>
+      <h3>Invite anyone</h3>
+      <p>Share a link. Friends join the trip without creating an account first. Sign up later and their history follows them.</p>
     </div>
     <div class="card">
       <div class="card-icon">💳</div>
-      <h3>Réglez par carte ou virement</h3>
-      <p>Payez ce que vous devez directement dans l'application — par carte via Stripe ou par virement bancaire via Tink Open Banking.</p>
+      <h3>Settle with card or bank</h3>
+      <p>Pay what you owe directly in the app — by card via Stripe or by bank transfer via Tink Open Banking.</p>
     </div>
     <div class="card">
       <div class="card-icon">✈️</div>
-      <h3>Conçu pour les voyages</h3>
-      <p>Suivez qui a payé quoi pour chaque repas, hôtel et activité. Consultez les totaux par personne d'un seul coup d'œil.</p>
+      <h3>Built for trips</h3>
+      <p>Track who paid for what across every meal, hotel, and activity. See running totals per person at a glance.</p>
     </div>
     <div class="card">
       <div class="card-icon">🔒</div>
-      <h3>Conçu pour la confidentialité</h3>
-      <p>Vos données sont hébergées sur des serveurs européens (Francfort). Nous ne vendons jamais vos données et n'affichons pas de publicités. Vos contacts ne quittent jamais votre appareil.</p>
+      <h3>Private by design</h3>
+      <p>Your data lives on EU servers (Frankfurt). We never sell data or show ads. Contact data never leaves your device.</p>
     </div>
     <div class="card">
       <div class="card-icon">⚡</div>
-      <h3>Sans inscription</h3>
-      <p>Démarrez un voyage et ajoutez des dépenses immédiatement en tant qu'invité. Connectez votre compte Google quand vous le souhaitez.</p>
+      <h3>No sign-up required</h3>
+      <p>Start a trip and add expenses immediately as a guest. Connect your Google account whenever you're ready.</p>
     </div>
   </div>
 
@@ -285,8 +285,8 @@
     <div class="eu-strip-inner">
       <div class="eu-badge">🇪🇺</div>
       <div>
-        <h3>Fabriqué en France. Conçu pour l'Europe.</h3>
-        <p>Toutes les données sont stockées dans l'UE (Francfort, Allemagne) conformément au RGPD. Vous avez le droit d'accéder à vos données, de les exporter et de les supprimer à tout moment. Paiements gérés par Stripe et Tink — tous deux conformes PCI-DSS et DSP2.</p>
+        <h3>Made in France. Built for Europe.</h3>
+        <p>All data is stored in the EU (Frankfurt, Germany) under GDPR. You have the right to access, export, and delete your data at any time. Payments handled by Stripe and Tink — both PCI-DSS and PSD2 compliant.</p>
       </div>
     </div>
   </div>
@@ -295,9 +295,9 @@
   <footer>
     <p>© 2026 McCleery Enterprises · ouiShare</p>
     <div class="footer-links">
-      <a href="mailto:tyrtel@gmail.com">Assistance</a>
-      <a href="privacy-policy-fr.html">Politique de Confidentialité (FR)</a>
+      <a href="mailto:tyrtel@gmail.com">Support</a>
       <a href="privacy-policy-en.html">Privacy Policy (EN)</a>
+      <a href="privacy-policy-fr.html">Politique de Confidentialité (FR)</a>
     </div>
   </footer>
 
