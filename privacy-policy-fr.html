@@ -33,11 +33,10 @@
   <h2>2. Données Collectées et Pourquoi</h2>
 
   <h3>Données de compte</h3>
-  <p>Lorsque vous vous connectez avec Google ou Apple, nous recevons votre <strong>nom</strong> et votre <strong>adresse e-mail</strong> de ces fournisseurs. Ces informations sont utilisées uniquement pour vous identifier dans l'application et pour vous associer aux voyages auxquels vous avez été invité(e).</p>
-  <p>Lorsque vous utilisez l'application en tant qu'invité(e), nous enregistrons uniquement le <strong>nom d'affichage</strong> que vous fournissez.</p>
+  <p>Vous pouvez créer un compte avec votre <strong>adresse e-mail et un mot de passe</strong>, ou en vous connectant via <strong>Google</strong> ou <strong>Apple</strong>. Pour les comptes e-mail, nous recevons votre nom et adresse e-mail ; pour les connexions sociales, nous les recevons du fournisseur choisi. Ces informations sont utilisées uniquement pour vous identifier dans l'application, pour vous associer aux voyages et groupes auxquels vous avez été invité(e), et pour vous envoyer des e-mails liés à votre compte (vérification d'e-mail, réinitialisation de mot de passe).</p>
 
-  <h3>Données de voyage et de dépenses</h3>
-  <p>Nous enregistrons les voyages, dépenses et enregistrements de paiements que vous créez dans l'application. Cela comprend les descriptions de dépenses, les montants, les noms des participants et le statut de règlement. Ces données sont stockées dans votre compte et sont nécessaires au fonctionnement de l'application.</p>
+  <h3>Données de voyage, de groupe et de dépenses</h3>
+  <p>Nous enregistrons les voyages, groupes, dépenses et enregistrements de paiements que vous créez dans l'application. Cela comprend les noms de groupes, les noms de voyages, les descriptions de dépenses, les montants, les noms des participants, le statut de règlement et les calendriers de dépenses récurrentes (périodicité, date de début, prochaine échéance). Ces données sont stockées dans votre compte et sont nécessaires au fonctionnement de l'application.</p>
 
   <h3>Appareil photo et photothèque</h3>
   <p>Lorsque vous utilisez la fonction de numérisation de reçus, l'application accède à l'appareil photo ou à la photothèque de votre appareil pour capturer une image d'un reçu. L'image est envoyée à notre service de traitement sécurisé afin d'en extraire les détails de dépense (montants, descriptions), puis est conservée dans votre compte afin que vous puissiez consulter le reçu original à côté de la dépense à tout moment. Les images de reçus sont stockées dans l'UE et supprimées lorsque vous supprimez la dépense associée ou votre compte.</p>
@@ -48,6 +47,10 @@
   <h3>Données de paiement</h3>
   <p>Lorsque vous réglez une dépense par carte, le paiement est traité directement par <strong>Stripe</strong>, notre prestataire de paiement. ouiShare ne voit ni ne stocke jamais votre numéro de carte, CVV ou autres données bancaires complètes. Stripe est un responsable de traitement indépendant — voir <a href="https://stripe.com/fr/privacy">stripe.com/fr/privacy</a>.</p>
   <p>Lorsque vous utilisez l'Open Banking (virement bancaire), vous êtes redirigé(e) vers la page d'autorisation de votre banque via <strong>Tink</strong>. ouiShare n'accède pas directement à vos identifiants bancaires.</p>
+  <p>Lorsque vous choisissez de régler via une application wallet (Revolut, PayPal, Venmo, Wero, Lydia ou similaire), ouiShare ouvre un lien profond qui vous redirige vers l'application tierce concernée. ouiShare ne partage aucune donnée avec ces applications — le transfert s'effectue entièrement dans l'application tierce, dans le cadre de sa propre politique de confidentialité.</p>
+
+  <h3>Notifications push</h3>
+  <p>Si vous accordez la permission de recevoir des notifications, nous stockons un <strong>jeton de notification push</strong> pour votre appareil. Ce jeton est utilisé uniquement pour vous envoyer des notifications dans l'application (dépense ajoutée, paiement reçu, invitation à un groupe). Nous ne l'utilisons pas à des fins marketing. Vous pouvez retirer cette permission à tout moment dans les paramètres de votre appareil.</p>
 
   <h3>Données techniques</h3>
   <p>Nous collectons des informations techniques standard nécessaires au fonctionnement du service, notamment le type d'appareil et la version du système d'exploitation. Nous n'utilisons pas d'identifiants publicitaires et nous n'effectuons pas de suivi analytique.</p>
@@ -65,16 +68,18 @@
 
   <h2>4. Base Légale du Traitement (RGPD)</h2>
   <ul>
-    <li><strong>Exécution d'un contrat (Article 6(1)(b))</strong> — le traitement de votre nom, e-mail et données de voyage est nécessaire pour fournir le service auquel vous avez souscrit.</li>
+    <li><strong>Exécution d'un contrat (Article 6(1)(b))</strong> — le traitement de votre nom, e-mail et données de voyage et de groupe est nécessaire pour fournir le service auquel vous avez souscrit.</li>
     <li><strong>Intérêt légitime (Article 6(1)(f))</strong> — fonctionnement technique et sécurité de l'application.</li>
-    <li><strong>Consentement (Article 6(1)(a))</strong> — accès à l'appareil photo et à la photothèque, qui requiert votre autorisation explicite au niveau de l'appareil.</li>
+    <li><strong>Consentement (Article 6(1)(a))</strong> — accès à l'appareil photo et à la photothèque, et jeton de notification push, qui requièrent chacun votre autorisation explicite au niveau de l'appareil.</li>
   </ul>
 
   <h2>5. Durée de Conservation</h2>
   <table>
     <tr><th>Type de données</th><th>Durée de conservation</th></tr>
-    <tr><td>Données de compte et de voyage</td><td>Conservées tant que votre compte est actif. Supprimées dans les 30 jours suivant une demande de suppression de compte.</td></tr>
+    <tr><td>Données de compte, de voyage et de groupe</td><td>Conservées tant que votre compte est actif. Supprimées dans les 30 jours suivant une demande de suppression de compte.</td></tr>
+    <tr><td>Modèles de dépenses récurrentes</td><td>Supprimés lors de la suppression du modèle ou du compte.</td></tr>
     <tr><td>Images de reçus</td><td>Conservées dans votre compte. Supprimées lors de la suppression de la dépense ou du compte.</td></tr>
+    <tr><td>Jeton de notification push</td><td>Supprimé lorsque vous retirez la permission de notification ou supprimez votre compte.</td></tr>
     <tr><td>Enregistrements de paiements</td><td>Conservés 7 ans conformément à la loi comptable française.</td></tr>
   </table>
 

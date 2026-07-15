@@ -33,11 +33,10 @@
   <h2>2. What Data We Collect and Why</h2>
 
   <h3>Account data</h3>
-  <p>When you sign in with Google or Apple, we receive your <strong>name</strong> and <strong>email address</strong> from those providers. This is used solely to identify you within the app and to match you to trips you have been invited to join.</p>
-  <p>When you use the app as a guest, we store only the <strong>display name</strong> you provide.</p>
+  <p>You can create an account using your <strong>email address and password</strong>, or by signing in with <strong>Google</strong> or <strong>Apple</strong>. For email accounts we receive your name and email; for social sign-in we receive your name and email from the chosen provider. This information is used solely to identify you within the app, to match you to trips and groups you have been invited to join, and to send you account-related emails such as email verification and password reset codes.</p>
 
-  <h3>Trip and expense data</h3>
-  <p>We store the trips, expenses, and payment records you create within the app. This includes expense descriptions, amounts, participant names, and settlement status. This data is stored in your account and is necessary to provide the core functionality of the app.</p>
+  <h3>Trip, group, and expense data</h3>
+  <p>We store the trips, groups, expenses, and payment records you create within the app. This includes group names, trip names, expense descriptions, amounts, participant names, settlement status, and recurring expense schedules (period, start date, next due date). This data is stored in your account and is necessary to provide the core functionality of the app.</p>
 
   <h3>Camera and photo library</h3>
   <p>When you use the receipt scanning feature, the app accesses your device camera or photo library to capture an image of a receipt. The image is sent to our secure processing service to extract expense details (amounts, descriptions), and is then stored in your account so you can view the original receipt alongside the expense at any time. Receipt images are stored in the EU and are deleted when you delete the associated expense or your account.</p>
@@ -48,6 +47,10 @@
   <h3>Payment data</h3>
   <p>When you pay a settlement via card, the payment is processed directly by <strong>Stripe</strong>, our payment processor. ouiShare never sees or stores your card number, CVV, or full card details. Stripe is an independent data controller for payment data — see <a href="https://stripe.com/privacy">stripe.com/privacy</a>.</p>
   <p>When you use Open Banking (bank transfer), you are redirected to your bank's authorisation page via <strong>Tink</strong>. ouiShare does not access your bank credentials or account data directly.</p>
+  <p>When you choose to settle via a wallet app (Revolut, PayPal, Venmo, Wero, Lydia, or similar), ouiShare opens a deep link that takes you to the relevant third-party app. ouiShare does not share your data with those apps — the transfer happens entirely within the third-party app under its own privacy policy.</p>
+
+  <h3>Push notifications</h3>
+  <p>If you grant notification permission, we store a <strong>push notification token</strong> for your device. This token is used solely to deliver in-app notifications (such as expense added, payment received, or group invite). We do not use it for marketing purposes. You can withdraw this permission at any time via your device settings.</p>
 
   <h3>Technical data</h3>
   <p>We collect standard technical information necessary to operate the service, including your device type and operating system version. We do not use advertising identifiers and we do not run analytics tracking.</p>
@@ -65,16 +68,18 @@
 
   <h2>4. Legal Basis for Processing (GDPR)</h2>
   <ul>
-    <li><strong>Contract performance (Article 6(1)(b))</strong> — processing your name, email, and trip data is necessary to provide the service you signed up for.</li>
+    <li><strong>Contract performance (Article 6(1)(b))</strong> — processing your name, email, trip and group data is necessary to provide the service you signed up for.</li>
     <li><strong>Legitimate interest (Article 6(1)(f))</strong> — technical operation and security of the app.</li>
-    <li><strong>Consent (Article 6(1)(a))</strong> — camera and photo library access, which requires your explicit permission at the device level.</li>
+    <li><strong>Consent (Article 6(1)(a))</strong> — camera and photo library access, and push notification token, which each require your explicit permission at the device level.</li>
   </ul>
 
   <h2>5. Data Retention</h2>
   <table>
     <tr><th>Data type</th><th>Retention period</th></tr>
-    <tr><td>Account and trip data</td><td>Retained while your account is active. Deleted within 30 days of an account deletion request.</td></tr>
+    <tr><td>Account, trip, and group data</td><td>Retained while your account is active. Deleted within 30 days of an account deletion request.</td></tr>
+    <tr><td>Recurring expense templates</td><td>Deleted when you delete the template or your account.</td></tr>
     <tr><td>Receipt images</td><td>Stored in your account. Deleted when you delete the expense or your account.</td></tr>
+    <tr><td>Push notification token</td><td>Deleted when you revoke notification permission or delete your account.</td></tr>
     <tr><td>Payment records</td><td>Retained for 7 years as required by French accounting law.</td></tr>
   </table>
 
